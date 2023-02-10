@@ -1,6 +1,10 @@
 export default async function Head({ params }) {
 
-    const answer = await fetch(`http://localhost:3000/api/hello?question=${params.id}`, {
+    //check if in production
+    const isProd = process.env.NODE_ENV === 'production'
+    const baseURL = isProd ? 'https://askme-app-mu.vercel.app' : 'http://localhost:3000'
+
+    const answer = await fetch(`${baseURL}/api/hello?question=${params.id}`, {
         cache: 'no-cache',
         method: 'POST',
         headers: {
