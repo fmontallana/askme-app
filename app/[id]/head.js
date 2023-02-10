@@ -17,7 +17,10 @@ export default async function Head({ params }) {
         <>
             <title>{res}</title>
             <meta content="width=device-width, initial-scale=1" name="viewport" />
-            <meta name="description" content={res} />
+            <meta name="description" content={res || "ask me anything"} />
+            <meta property="og:title" content={res || "ask me anything"} />
+            <meta property="og:description" content={res || "add your question at the end of the URL. Ex. /what is the value of PI?"} />
+            <meta property="og:type" content="website" />
             <link rel="icon" href="/favicon.ico" />
         </>
     )
