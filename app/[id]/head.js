@@ -1,7 +1,7 @@
 export default async function Head({ params }) {
 
     //check if in production
-    const isProd = process.env.NODE_ENV === 'production'
+    const isProd = process.env.NEXT_PUBLIC_NODE_ENV === 'production'
     const baseURL = isProd ? 'https://askme-app-mu.vercel.app' : 'http://localhost:3000'
 
     const answer = await fetch(`${baseURL}/api/hello?question=${params.id}`, {
