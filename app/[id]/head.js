@@ -1,6 +1,7 @@
 export default async function Head({ params }) {
 
     const answer = await fetch(`http://localhost:3000/api/hello?question=${params.id}`, {
+        cache: 'no-cache',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
